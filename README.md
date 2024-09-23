@@ -7,15 +7,6 @@ Welcome to **Learn JavaScript: From 0 to 100**, a complete guide for beginners t
 - [Introduction](#introduction)
 - [Prerequisites](#prerequisites)
 - [How to Use This Repository](#how-to-use-this-repository)
-- [Curriculum](#curriculum)
-  - [Level 0-20: Basics](#level-0-20-basics)
-  - [Level 21-40: Functions and Scope](#level-21-40-functions-and-scope)
-  - [Level 41-60: Arrays and Objects](#level-41-60-arrays-and-objects)
-  - [Level 61-80: DOM Manipulation](#level-61-80-dom-manipulation)
-  - [Level 81-100: Asynchronous JS and ES6+](#level-81-100-asynchronous-js-and-es6)
-- [Projects](#projects)
-- [Contributing](#contributing)
-- [License](#license)
 
 ---
 
