@@ -28,8 +28,8 @@ const smb = Symbol("key");
 const obj = {
   firstName: "Samarth",
   lastName: "Gupta",
-//   smb: "keyValue",  // this is not right approach to use Symbol datatype in objects but if you want to use then you can use this also
-  [smb]: "keyValue",  // this is correct approach to use Symbol datatype in objects 
+  //   smb: "keyValue",  // this is not right approach to use Symbol datatype in objects but if you want to use then you can use this also
+  [smb]: "keyValue", // this is correct approach to use Symbol datatype in objects
   age: 21,
 };
 
@@ -39,112 +39,120 @@ const obj = {
   age: 21,
   [Symbol(key)]: 'keyValue'  // when we use [smb]
 } */
-console.log(obj)
+console.log(obj);
 
 // console.log(obj.smb)  // it print keyValue but
 
-console.log(obj[smb]) // it also keyValue
+console.log(obj[smb]); // it also keyValue
 
 // somtimes we don't want to make changes in our object then
 const obj1 = {
-    car: "Audi",
-    model: 2022,
-    color: "black"
-}
+  car: "Audi",
+  model: 2022,
+  color: "black",
+};
 
-console.log(obj1.color) // print black
+console.log(obj1.color); // print black
 
-obj1.color = "blue"
-console.log(obj1.color)  // print blue
+obj1.color = "blue";
+console.log(obj1.color); // print blue
 
 // if we freeze the object then whenever anyone change values in object it cannot reflect in the object
 Object.freeze(obj1);
 
-obj1.color = "black"
-console.log(obj1.color) // print blue -  because we change color before freezing the object
-
+obj1.color = "black";
+console.log(obj1.color); // print blue -  because we change color before freezing the object
 
 // if we want to add function in our object then
 const p = {
-    height: 178,
-    age: 28
-}
+  height: 178,
+  age: 28,
+};
 
-p.greeting = function(){
-    console.log("Hello Sir")
-}
+p.greeting = function () {
+  console.log("Hello Sir");
+};
 
-console.log(p.greeting())
-
+console.log(p.greeting());
 
 // objects in object
 const person = {
-    fullName : {
-        userFullName: {
-            firstName: "Samarth",
-            lastName: "Gupta",
-        },
+  fullName: {
+    userFullName: {
+      firstName: "Samarth",
+      lastName: "Gupta",
     },
-    age: 21,
-    height: 178,
-    address: {
-        city: "New Delhi",
-    }
-}
+  },
+  age: 21,
+  height: 178,
+  address: {
+    city: "New Delhi",
+  },
+};
 
-console.log(person.fullName)  // { userFullName: { firstName: 'Samarth', lastName: 'Gupta' } }
-console.log(person.fullName.userFullName)  // { firstName: 'Samarth', lastName: 'Gupta' }
-console.log(person.fullName.userFullName.firstName)  // Samarth
+console.log(person.fullName); // { userFullName: { firstName: 'Samarth', lastName: 'Gupta' } }
+console.log(person.fullName.userFullName); // { firstName: 'Samarth', lastName: 'Gupta' }
+console.log(person.fullName.userFullName.firstName); // Samarth
 
 // combine two or more objects
 const ob1 = {
-    a: 1,
-    b: 2
-}
+  a: 1,
+  b: 2,
+};
 
 const obj2 = {
-    c: 3,
-    d: 4
-}
+  c: 3,
+  d: 4,
+};
 
-const obj3 = {ob1, obj2}
-console.log(obj3) // { ob1: { a: 1, b: 2 }, obj2: { c: 3, d: 4 } }
+const obj3 = { ob1, obj2 };
+console.log(obj3); // { ob1: { a: 1, b: 2 }, obj2: { c: 3, d: 4 } }
 
 const ob3 = Object.assign({}, ob1, obj2);
-console.log(ob3)  // { a: 1, b: 2, c: 3, d: 4 }
+console.log(ob3); // { a: 1, b: 2, c: 3, d: 4 }
 
-const obj4 = {...ob1, ...obj2} // merge two objects using spread operator
-console.log(obj4)  // { a: 1, b: 2, c: 3, d: 4 }
+const obj4 = { ...ob1, ...obj2 }; // merge two objects using spread operator
+console.log(obj4); // { a: 1, b: 2, c: 3, d: 4 }
 
 // array of object
 const users = [
-    {
-        id: 1,
-        emmail: "test1@gmail.com"
-    },
-    {
-        id: 2,
-        email: "test2@gmail.com"
-    },
-    {
-        id: 3,
-        email: "test3@gmail.com"
-    }
-]
+  {
+    id: 1,
+    emmail: "test1@gmail.com",
+  },
+  {
+    id: 2,
+    email: "test2@gmail.com",
+  },
+  {
+    id: 3,
+    email: "test3@gmail.com",
+  },
+];
 
-console.log(users[1].email)  // test2@gmail.com
+console.log(users[1].email); // test2@gmail.com
 
 // if we want to get all keys and values of the object
 const testObj = {
-    a: 1,
-    b: 2,
-    c: 3,
-    d: 4
-}
+  a: 1,
+  b: 2,
+  c: 3,
+  d: 4,
+};
 
-console.log(Object.keys(testObj)) // ['a', 'b', 'c', 'd']
-console.log(Object.values(testObj)) // [1, 2, 3, 4]
+console.log(Object.keys(testObj)); // ['a', 'b', 'c', 'd']
+console.log(Object.values(testObj)); // [1, 2, 3, 4]
 
 // you can also check key is present in the object or not
-console.log(testObj.hasOwnProperty("a"))  // true
-console.log(testObj.hasOwnProperty("f"))  // false 
+console.log(testObj.hasOwnProperty("a")); // true
+console.log(testObj.hasOwnProperty("f")); // false
+
+// Destructure of the object
+const course = {
+  courseName: "JS course",
+  coursePrice: 0,
+  courseInstructor: "Samarth",
+};
+
+const { courseInstructor: teacher } = course;
+console.log(teacher);  // Samarth
